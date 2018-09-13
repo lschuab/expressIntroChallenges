@@ -18,6 +18,10 @@ app.post('/create/:name', function(req, res) {
   res.json(data);
 });
 
+app.get('/', function(req, res) {
+  res.sendFile(__dirname+"/index.html");
+});
+
 app.get('/verify/:age', function(req, res) {
   if (req.params.age > 13) {
     res.sendStatus(200);
