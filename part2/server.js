@@ -16,7 +16,7 @@ app.post('/create/:name/:age', function(req, res) {
   const userData = {
     "id" : usersArr.length + 1,
     "name": req.params.name,
-    "age": req.params.age
+    "age": + req.params.age
   };
   usersArr.push(userData);
   fs.writeFileSync('./storage.json', JSON.stringify(usersArr));
